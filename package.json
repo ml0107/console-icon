@@ -1,7 +1,7 @@
 {
   "name": "console-icon",
   "version": "1.0.3",
-  "description": "Icon automation workflow with Figma",
+  "description": "Icon Figma test",
   "main": "dist/index.js",
   "module": "build/index.js",
   "typings": "build/index.d.ts",
