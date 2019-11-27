@@ -1,6 +1,6 @@
 {
   "name": "console-icon",
-  "version": "2.0.5",
+  "version": "2.0.6",
   "description": "Icon Figma test",
   "main": "dist/index.js",
   "module": "build/index.js",
