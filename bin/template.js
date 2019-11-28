@@ -3,7 +3,7 @@ const getAttrs = (style) => {
     xmlns: 'http://www.w3.org/2000/svg',
     width: 'size',
     height: 'size',
-    viewBox: '0 0 24 24',
+    viewBox: '0 0 size size',
   }
   const fillAttrs = {
     fill: 'color',
@@ -17,7 +17,8 @@ const getAttrs = (style) => {
     strokeLinejoin: 'round',
     otherProps: '...otherProps'
   }
-  return Object.assign({}, baseAttrs, style==='fill' ? fillAttrs : strokeAttrs)
+  // return Object.assign({}, baseAttrs, style==='fill' ? fillAttrs : strokeAttrs)
+  return Object.assign({}, baseAttrs)
 }
 
 const getElementCode = (ComponentName, attrs, svgCode) => `
@@ -33,18 +34,18 @@ const getElementCode = (ComponentName, attrs, svgCode) => `
     )
   };
 
-  ${ComponentName}.propTypes = {
-    color: PropTypes.string,
-    size: PropTypes.oneOfType([
-      PropTypes.string,
-      PropTypes.number
-    ]),
-  }
+  // ${ComponentName}.propTypes = {
+  //   color: PropTypes.string,
+  //   size: PropTypes.oneOfType([
+  //     PropTypes.string,
+  //     PropTypes.number
+  //   ]),
+  // }
 
-  ${ComponentName}.defaultProps = {
-    color: 'currentColor',
-    size: '24',
-  }
+  // ${ComponentName}.defaultProps = {
+  //   color: 'currentColor',
+  //   size: '24',
+  // }
 
   export default ${ComponentName}
 `
