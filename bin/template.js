@@ -18,7 +18,7 @@ const getAttrs = (style) => {
   //   otherProps: '...otherProps'
   // }
   // return Object.assign({}, baseAttrs, style==='fill' ? fillAttrs : strokeAttrs)
-  return Object.assign({}, baseAttrs, style)
+  return Object.assign({}, baseAttrs)
 }
 
 const getElementCode = (ComponentName, attrs, svgCode) => `
@@ -34,18 +34,18 @@ const getElementCode = (ComponentName, attrs, svgCode) => `
     )
   };
 
-  // ${ComponentName}.propTypes = {
-  //   color: PropTypes.string,
-  //   size: PropTypes.oneOfType([
-  //     PropTypes.string,
-  //     PropTypes.number
-  //   ]),
-  // }
+  ${ComponentName}.propTypes = {
+    color: PropTypes.string,
+    size: PropTypes.oneOfType([
+      PropTypes.string,
+      PropTypes.number
+    ]),
+  }
 
-  // ${ComponentName}.defaultProps = {
-  //   color: 'currentColor',
-  //   size: '30',
-  // }
+  ${ComponentName}.defaultProps = {
+    color: 'currentColor',
+    size: '30',
+  }
 
   export default ${ComponentName}
 `
