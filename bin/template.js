@@ -9,16 +9,16 @@ const getAttrs = (style) => {
     fill: 'color',
     otherProps: '...otherProps'
   }
-  const strokeAttrs = {
-    fill: 'none',
-    stroke: 'color',
-    strokeWidth: 2,
-    strokeLinecap: 'round',
-    strokeLinejoin: 'round',
-    otherProps: '...otherProps'
-  }
+  // const strokeAttrs = {
+  //   fill: 'none',
+  //   stroke: 'color',
+  //   strokeWidth: 2,
+  //   strokeLinecap: 'round',
+  //   strokeLinejoin: 'round',
+  //   otherProps: '...otherProps'
+  // }
   // return Object.assign({}, baseAttrs, style==='fill' ? fillAttrs : strokeAttrs)
-  return Object.assign({}, baseAttrs)
+  return Object.assign({}, baseAttrs, fillAttrs)
 }
 
 const getElementCode = (ComponentName, attrs, svgCode) => `
@@ -34,18 +34,18 @@ const getElementCode = (ComponentName, attrs, svgCode) => `
     )
   };
 
-  // ${ComponentName}.propTypes = {
-  //   color: PropTypes.string,
-  //   size: PropTypes.oneOfType([
-  //     PropTypes.string,
-  //     PropTypes.number
-  //   ]),
-  // }
+  ${ComponentName}.propTypes = {
+    color: PropTypes.string,
+    size: PropTypes.oneOfType([
+      PropTypes.string,
+      PropTypes.number
+    ]),
+  }
 
-  // ${ComponentName}.defaultProps = {
-  //   color: 'currentColor',
-  //   size: '24',
-  // }
+  ${ComponentName}.defaultProps = {
+    color: 'currentColor',
+    size: '30',
+  }
 
   export default ${ComponentName}
 `
