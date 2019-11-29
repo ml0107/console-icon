@@ -5,20 +5,19 @@ const getAttrs = (style) => {
     height: 'size',
     viewBox: '0 0 30 30',
   }
-  // const fillAttrs = {
-  //   fill: 'color',
-  //   otherProps: '...otherProps'
-  // }
-  // const strokeAttrs = {
-  //   fill: 'none',
-  //   stroke: 'color',
-  //   strokeWidth: 2,
-  //   strokeLinecap: 'round',
-  //   strokeLinejoin: 'round',
-  //   otherProps: '...otherProps'
-  // }
-  // return Object.assign({}, baseAttrs, style==='fill' ? fillAttrs : strokeAttrs)
-  return Object.assign({}, baseAttrs)
+  const fillAttrs = {
+    fill: 'color',
+    otherProps: '...otherProps'
+  }
+  const strokeAttrs = {
+    fill: 'none',
+    stroke: 'color',
+    strokeWidth: 2,
+    strokeLinecap: 'round',
+    strokeLinejoin: 'round',
+    otherProps: '...otherProps'
+  }
+  return Object.assign({}, baseAttrs, style==='fill' ? fillAttrs : strokeAttrs)
 }
 
 const getElementCode = (ComponentName, attrs, svgCode) => `
