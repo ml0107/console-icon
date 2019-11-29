@@ -1,6 +1,6 @@
 {
   "name": "console-juuust-icon",
-  "version": "2.1.22",
+  "version": "2.1.23",
   "description": "Icon Figma test",
   "main": "dist/index.js",
   "module": "build/index.js",
