@@ -6,6 +6,7 @@ const parseName = (name, defaultStyle) => {
   return {
     name,
     componentName: upperCamelCase(name),
+    style,
     // style: style==='fill' || style==='stroke' ? style : defaultStyle
   }
 }
